@@ -10,7 +10,7 @@ async function readFile(file) {
     return utf8decoder.decode(await vscode.workspace.fs.readFile(file)).replace(/\/\/.*|\/\*[\s\S]*?\*\//g, '')
 }
 
-async function commentFileContentPart(inputContent) {
+async function commentFileContentPart(code) {
     const resp = await fetch('https://api.deepseek.com/chat/completions', {
         method: 'POST',
         headers: {
@@ -21,7 +21,7 @@ async function commentFileContentPart(inputContent) {
             "model": "deepseek-chat",
             "messages": [
               {"role": "user", "content": `
-<code>${inputContent}</code>
+<code>${code}</code>
 用三句话概括这份代码对什么状态数据做了什么业务操作
     `}
             ]
