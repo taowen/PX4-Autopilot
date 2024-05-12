@@ -1,3 +1,5 @@
+const USER_QUESTION = '卡尔曼增益是如何计算的？'
+const SEARCH_IN_DIRS = ['src/modules/ekf2']
 const { DEEPSEEK_API_KEY } = vscode.workspace.getConfiguration('taowen.repo-to-prompt')
 if (!DEEPSEEK_API_KEY) {
     vscode.window.showInformationMessage('please set taowen.repo-to-prompt.DEEPSEEK_API_KEY in your settings.json')
@@ -127,7 +129,7 @@ ${inputContent}
 </code>
 
 <user-question>
-欧拉角的状态是怎么估计的？
+${USER_QUESTION}
 </user-question>
 
 为了回答用户的问题，给这份代码和问题的相关程度打一个 0 ~ 5 的分数。以 JSON 的格式输出。不要解释
@@ -166,7 +168,7 @@ ${code}
 </code>
 
 <user-question>
-欧拉角的状态是怎么估计的？
+${USER_QUESTION}
 </user-question>
 
 按下面的 XML 格式输出，不要额外解释
@@ -288,7 +290,9 @@ async function walkDirectory(uri) {
 }
 
 
-await walkDirectory(vscode.Uri.joinPath(rootDir, 'src/modules/ekf2'))
+for (const searchInDir of SEARCH_IN_DIRS) {
+    await walkDirectory(vscode.Uri.joinPath(rootDir, searchInDir))
+}
 try {
     let relatedContents = await Promise.all(processFilePromises)
     relatedContents = relatedContents.filter(e => e)
@@ -305,7 +309,7 @@ try {
                 {"role": "user", "content": `
 ${relatedContents.join('\n')}
 
-综合上述文件的内容，欧拉角的状态是怎么估计的？
+综合上述文件的内容，${USER_QUESTION}
 `}]
             })
     })
