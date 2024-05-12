@@ -1,0 +1,1 @@
+ 这份代码定义了两个函数，主要用于检查飞行任务（mission）的可行性。首先，`checkMissionFeasible`函数遍历任务中的每个任务项（mission item），检查其数据是否有效，并通过`FeasibilityChecker`类处理每个任务项，以确保它们不会违反任何飞行限制。其次，`checkMissionAgainstGeofence`函数检查任务中的每个位置点是否违反了地理围栏（geofence）限制，即是否在允许的飞行区域内。如果发现任何任务项无效或违反地理围栏，函数将返回`false`，表示任务不可行。

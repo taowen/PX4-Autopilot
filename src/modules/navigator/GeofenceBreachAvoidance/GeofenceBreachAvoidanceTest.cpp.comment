@@ -1,0 +1,9 @@
+ 这份代码是一系列针对地理围栏（Geofence）违规避免算法的测试用例，主要用于验证无人机在遇到地理围栏违规时的行为和响应。具体业务操作包括：
+
+1. **计算和验证避障航点**：代码通过测试函数`waypointFromBearingAndDistance`和`generateLoiterPointForFixedWing`/`generateLoiterPointForMultirotor`来验证无人机如何根据当前位置、航向和距离计算出避障航点，并确保这些航点的准确性，以便无人机能够安全地避开地理围栏区域。
+
+2. **生成和验证盘旋高度**：通过`generateLoiterAltitudeForFixedWing`和`generateLoiterAltitudeForMulticopter`测试函数，代码验证了无人机在遇到高度限制违规时如何计算出合适的盘旋高度，以避免进一步的违规行为。
+
+3. **处理最大离家距离违规**：测试函数`maxDistToHomeViolationMulticopter`和`maxDistToHomeViolationFixedWing`验证了无人机在超出最大离家距离限制时的行为，确保无人机能够计算出返回到安全距离内的航点，避免进一步的违规。
+
+总的来说，这份代码通过一系列的测试用例，确保了无人机在遇到地理围栏违规时的自动避障和行为调整机制能够正确、有效地工作。

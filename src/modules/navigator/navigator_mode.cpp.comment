@@ -1,0 +1,3 @@
+ 1. 这份代码定义了一个名为`NavigatorMode`的类，它与`Navigator`对象关联，用于处理导航模式的状态变化。
+2. 类中包含了四个状态回调函数：`on_inactive`、`on_inactivation`、`on_activation`和`on_active`，分别在模式变为非活动、正在变为非活动、正在变为活动和活动状态时被调用。
+3. 在激活状态回调函数`on_activation`中，代码将导航器的当前位置设定点的有效性设置为`false`，表明在激活模式时，当前位置设定点是无效的。

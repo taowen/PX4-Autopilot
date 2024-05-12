@@ -1,5 +1,5 @@
-const USER_QUESTION = '卡尔曼增益是如何计算的？'
-const SEARCH_IN_DIRS = ['src/modules/ekf2']
+const USER_QUESTION = 'navigator什么情况下会决定返航？'
+const SEARCH_IN_DIRS = ['src/modules/navigator']
 const { DEEPSEEK_API_KEY } = vscode.workspace.getConfiguration('taowen.repo-to-prompt')
 if (!DEEPSEEK_API_KEY) {
     vscode.window.showInformationMessage('please set taowen.repo-to-prompt.DEEPSEEK_API_KEY in your settings.json')

@@ -1,0 +1,1 @@
+ 这份代码定义了一个名为`VtolTakeoff`的类，它负责处理垂直起降飞行器的起飞过程。该类通过不同的状态（如`TAKEOFF_HOVER`、`ALIGN_HEADING`、`TRANSITION`、`CLIMB`）来管理起飞的各个阶段，包括设置起飞位置、调整飞行器到目标高度、进行方向对准、执行垂直起降转换以及爬升到巡航高度等操作。通过调用`Navigator`类的方法和更新`position_setpoint_triplet_s`结构体中的数据，`VtolTakeoff`确保飞行器按照预定的起飞流程执行，直到完成自动垂直起飞任务。
