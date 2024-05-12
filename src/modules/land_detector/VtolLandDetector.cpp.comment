@@ -1,0 +1,1 @@
+ 这份代码定义了一个名为 `VtolLandDetector` 的类，它用于检测垂直起降（VTOL）飞行器的着陆状态。代码中实现了三个主要方法：`_get_maybe_landed_state`、`_get_landed_state` 和 `_get_freefall_state`，它们分别用于判断飞行器是否可能着陆、是否已经着陆以及是否处于自由落体状态。这些方法根据飞行器的类型（固定翼或多旋翼）和武装状态来更新着陆状态的判断逻辑。

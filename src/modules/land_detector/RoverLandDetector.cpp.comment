@@ -1,0 +1,3 @@
+ 1. 这份代码定义了一个名为`RoverLandDetector`的类，该类包含两个私有方法`_get_ground_contact_state`和`_get_landed_state`，用于获取地面接触状态和着陆状态。
+2. `_get_ground_contact_state`方法始终返回`true`，表示假设地面始终有接触。
+3. `_get_landed_state`方法根据飞行器的导航状态和是否已武装来判断着陆状态，如果导航状态为自动着陆，则返回`true`，表示着陆状态；否则，如果未武装，也返回`true`，表示着陆状态。

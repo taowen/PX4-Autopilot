@@ -1,0 +1,1 @@
+ 这份代码定义了一系列参数，用于配置一个名为LTEST的测试模式。这些参数包括测试模式的状态（LTEST_MODE）、各种不确定性值（如加速度、测量、位置和速度的不确定性）、缩放因子（LTEST_SCALE_X 和 LTEST_SCALE_Y）、传感器旋转角度（LTEST_SENS_ROT）以及传感器的空间位置坐标（LTEST_SENS_POS_X, LTEST_SENS_POS_Y, LTEST_SENS_POS_Z）。这些参数用于设置和调整测试环境，以便进行精确的测试和测量。
